@@ -2,7 +2,10 @@ package org.mapjdbc.util;
 
 
 /**
+ * @author taran
  * Just used for testing of GIT
+ * 
+ * 
  * */
 public class MyTest {
 	
