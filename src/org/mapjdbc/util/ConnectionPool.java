@@ -5,9 +5,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 import oracle.jdbc.driver.OracleDriver;
 
+import org.mapjdbc.common.PropertyReader;
 import org.mapjdbc.exceptions.ApplicationException;
 
 /**
@@ -62,9 +64,10 @@ public class ConnectionPool {
 	public synchronized void initialize() throws ApplicationException {
 		if (listConnections == null) {
 			try {
-				String userName = "taran";
-				String password = "mapjdbc";
-				String url = "jdbc:oracle:thin:@localhost:1521:xe";
+				Properties property = PropertyReader.getProperties();
+				String userName = property.getProperty("jdbc.username");
+				String password = property.getProperty("jdbc.password");
+				String url = property.getProperty("jdbc.url");
 				OracleDriver oracleDriver = new OracleDriver();
 				DriverManager.registerDriver(oracleDriver);
 				listConnections = new ArrayList<Connection>();
