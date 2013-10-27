@@ -39,6 +39,24 @@ public class ApplicationException extends Exception {
 		this.errCode = errCode;
 		this.errorMessage = errorMessage;
 	}
+
+	public Integer getErrCode() {
+		return errCode;
+	}
+
+	public void setErrCode(Integer errCode) {
+		this.errCode = errCode;
+	}
+
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+	
+	
 	
 	
 	
